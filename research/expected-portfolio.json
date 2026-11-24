@@ -1,0 +1,11 @@
+{
+  "metrics": {
+    "trades": 206,
+    "tokyoTrades": 141,
+    "pnl": 871.2576088059919,
+    "maxDD": 84.9597827409358,
+    "longestDays": 125.95833333333333,
+    "pnlWithoutBestTokyo": 855.5059197130792
+  },
+  "equitySha256": "25771e055b9df79b75b519abb7715261d116daa8b342dcb630e7713516fbc892"
+}

@@ -1,0 +1,61 @@
+{
+  "name": "@tradejs/strategy-session-agent",
+  "version": "0.0.0-development",
+  "private": true,
+  "description": "Portfolio intraday session agent for Bybit USDT perpetuals and the original BTCUSDT prototype.",
+  "keywords": [
+    "ai",
+    "claude",
+    "codex"
+  ],
+  "type": "module",
+  "packageManager": "yarn@4.13.0",
+  "engines": {
+    "node": "24.x"
+  },
+  "files": [
+    "dist",
+    "calibration"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./calibration/bybit-m15.json": "./calibration/bybit-m15.json",
+    "./calibration/bybit-universe.json": "./calibration/bybit-universe.json",
+    "./calibration/bybit-lots.json": "./calibration/bybit-lots.json"
+  },
+  "sideEffects": false,
+  "devDependencies": {
+    "@tradejs/core": "3.1.29-beta.303",
+    "@tradejs/strategy-kit": "3.0.6",
+    "@tradejs/types": "3.1.29-beta.303",
+    "prettier": "^3.6.2",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.2"
+  },
+  "scripts": {
+    "build": "tsup",
+    "format:check": "prettier --check .",
+    "test": "node --test tests/*.test.mjs",
+    "typecheck": "tsc -p ./tsconfig.json --noEmit",
+    "checks": "yarn format:check && yarn typecheck && yarn build && yarn test",
+    "backtest:portfolio": "node research/portfolio-backtest.mjs"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "license": "UNLICENSED",
+  "peerDependencies": {
+    "@tradejs/core": "3.1.29-beta.303",
+    "@tradejs/strategy-kit": "3.0.6",
+    "@tradejs/types": "3.1.29-beta.303"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TradeJS-Dev/TradeJS-Strategy-Session-Agent.git"
+  }
+}

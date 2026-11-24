@@ -1,0 +1,6 @@
+dist/
+node_modules/
+.yarn/install-state.gz
+*.tgz
+__pycache__/
+*.py[cod]
